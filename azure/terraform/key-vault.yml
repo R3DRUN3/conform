@@ -1,0 +1,19 @@
+
+policies:
+  - name: az-kv-001-key-vault-public-network-access
+    description: "AZ-KV-001: Require private or otherwise restricted Key Vault networking."
+    resource: terraform.azurerm_key_vault
+    metadata:
+      severity: high
+      category: network-exposure
+    filters:
+      - public_network_access_enabled: true
+
+  - name: az-kv-002-key-vault-purge-protection-disabled
+    description: "AZ-KV-002: Require Key Vault purge protection."
+    resource: terraform.azurerm_key_vault
+    metadata:
+      severity: high
+      category: data-protection
+    filters:
+      - purge_protection_enabled: false

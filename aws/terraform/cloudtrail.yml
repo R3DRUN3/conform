@@ -1,0 +1,23 @@
+
+policies:
+  - name: aws-aud-001-cloudtrail-not-multi-region
+    description: "AWS-AUD-001: Require multi-region CloudTrail trails."
+    resource: terraform.aws_cloudtrail
+    metadata:
+      severity: high
+      category: logging
+    filters:
+      - or:
+          - is_multi_region_trail: false
+          - is_multi_region_trail: absent
+
+  - name: aws-aud-002-cloudtrail-log-file-validation-disabled
+    description: "AWS-AUD-002: Require CloudTrail log file validation."
+    resource: terraform.aws_cloudtrail
+    metadata:
+      severity: medium
+      category: logging
+    filters:
+      - or:
+          - enable_log_file_validation: false
+          - enable_log_file_validation: absent

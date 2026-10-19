@@ -1,0 +1,25 @@
+
+policies:
+  - name: az-net-001-nsg-allows-internet-ssh
+    description: "AZ-NET-001: Detect Terraform NSG rules exposing SSH to any source."
+    resource: terraform.azurerm_network_security_rule
+    metadata:
+      severity: critical
+      category: network-exposure
+    filters:
+      - access: Allow
+      - direction: Inbound
+      - destination_port_range: "22"
+      - source_address_prefix: "*"
+
+  - name: az-net-002-nsg-allows-internet-rdp
+    description: "AZ-NET-002: Detect Terraform NSG rules exposing RDP to any source."
+    resource: terraform.azurerm_network_security_rule
+    metadata:
+      severity: critical
+      category: network-exposure
+    filters:
+      - access: Allow
+      - direction: Inbound
+      - destination_port_range: "3389"
+      - source_address_prefix: "*"

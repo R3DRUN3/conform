@@ -1,0 +1,10 @@
+
+policies:
+  - name: az-db-001-sql-server-public-network-access
+    description: "AZ-DB-001: Flag Azure SQL servers with public network access enabled."
+    resource: terraform.azurerm_mssql_server
+    metadata:
+      severity: high
+      category: network-exposure
+    filters:
+      - public_network_access_enabled: true

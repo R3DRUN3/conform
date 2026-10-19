@@ -1,0 +1,9 @@
+
+policies:
+  - name: aws-aud-001-cloudtrail-not-logging
+    description: "AWS-AUD-001: Detect CloudTrail trails that are not logging."
+    resource: aws.cloudtrail
+    filters:
+      - type: status
+        key: IsLogging
+        value: false

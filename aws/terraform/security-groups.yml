@@ -1,0 +1,35 @@
+
+policies:
+  - name: aws-net-001-ssh-open-to-world
+    description: "AWS-NET-001: Detect Terraform SSH ingress open to the internet."
+    resource: terraform.aws_security_group
+    metadata:
+      severity: critical
+      category: network-exposure
+    filters:
+      - type: list-item
+        key: ingress[]
+        attrs:
+          - from_port: 22
+          - to_port: 22
+          - type: value
+            key: cidr_blocks
+            op: contains
+            value: "0.0.0.0/0"
+
+  - name: aws-net-002-rdp-open-to-world
+    description: "AWS-NET-002: Detect Terraform RDP ingress open to the internet."
+    resource: terraform.aws_security_group
+    metadata:
+      severity: critical
+      category: network-exposure
+    filters:
+      - type: list-item
+        key: ingress[]
+        attrs:
+          - from_port: 3389
+          - to_port: 3389
+          - type: value
+            key: cidr_blocks
+            op: contains
+            value: "0.0.0.0/0"

@@ -1,0 +1,9 @@
+
+policies:
+  - name: az-sto-001-storage-public-blob-access
+    description: "AZ-STO-001: Detect storage accounts permitting anonymous blob access."
+    resource: azure.storage
+    filters:
+      - type: value
+        key: properties.allowBlobPublicAccess
+        value: true

@@ -1,0 +1,9 @@
+
+policies:
+  - name: az-sto-002-storage-public-network-access
+    description: "AZ-STO-002: Detect storage accounts permitting public network access."
+    resource: azure.storage
+    filters:
+      - type: value
+        key: properties.publicNetworkAccess
+        value: Enabled

@@ -1,0 +1,7 @@
+
+policies:
+  - name: aws-sto-002-ebs-volume-unencrypted
+    description: "AWS-STO-002: Detect unencrypted EBS volumes."
+    resource: aws.ebs
+    filters:
+      - Encrypted: false

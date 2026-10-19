@@ -1,0 +1,14 @@
+
+policies:
+  - name: aws-sto-001-s3-public-access-block-incomplete
+    description: "AWS-STO-001: Require all S3 public access block settings."
+    resource: terraform.aws_s3_bucket_public_access_block
+    metadata:
+      severity: high
+      category: data-protection
+    filters:
+      - or:
+          - block_public_acls: false
+          - block_public_policy: false
+          - ignore_public_acls: false
+          - restrict_public_buckets: false

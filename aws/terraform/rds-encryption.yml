@@ -1,0 +1,21 @@
+
+policies:
+  - name: aws-db-001-rds-storage-unencrypted
+    description: "AWS-DB-001: Require RDS storage encryption."
+    resource: terraform.aws_db_instance
+    metadata:
+      severity: high
+      category: encryption
+    filters:
+      - or:
+          - storage_encrypted: false
+          - storage_encrypted: absent
+
+  - name: aws-db-002-rds-publicly-accessible
+    description: "AWS-DB-002: Flag publicly accessible RDS instances."
+    resource: terraform.aws_db_instance
+    metadata:
+      severity: high
+      category: network-exposure
+    filters:
+      - publicly_accessible: true

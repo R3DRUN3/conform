@@ -1,0 +1,10 @@
+
+policies:
+  - name: az-sto-001-storage-public-blob-access
+    description: "AZ-STO-001: Disable public blob access in Terraform."
+    resource: terraform.azurerm_storage_account
+    metadata:
+      severity: high
+      category: data-protection
+    filters:
+      - allow_nested_items_to_be_public: true

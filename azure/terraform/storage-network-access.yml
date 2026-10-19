@@ -1,0 +1,10 @@
+
+policies:
+  - name: az-sto-002-storage-public-network-access
+    description: "AZ-STO-002: Disable public network access on storage accounts."
+    resource: terraform.azurerm_storage_account
+    metadata:
+      severity: high
+      category: network-exposure
+    filters:
+      - public_network_access_enabled: true

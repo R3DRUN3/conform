@@ -1,0 +1,13 @@
+
+policies:
+  - name: aws-db-001-rds-storage-unencrypted
+    description: "AWS-DB-001: Detect RDS instances without storage encryption."
+    resource: aws.rds
+    filters:
+      - StorageEncrypted: false
+
+  - name: aws-db-002-rds-publicly-accessible
+    description: "AWS-DB-002: Detect publicly accessible RDS instances."
+    resource: aws.rds
+    filters:
+      - PubliclyAccessible: true

@@ -1,0 +1,33 @@
+
+policies:
+  - name: az-net-001-nsg-allows-internet-ssh
+    description: "AZ-NET-001: Detect inbound NSG rules allowing SSH from any source."
+    resource: azure.networksecuritygroup
+    filters:
+      - type: list-item
+        key: properties.securityRules[]
+        attrs:
+          - properties.access: Allow
+          - properties.direction: Inbound
+          - type: value
+            key: properties.sourceAddressPrefix
+            value: "*"
+          - type: value
+            key: properties.destinationPortRange
+            value: "22"
+
+  - name: az-net-002-nsg-allows-internet-rdp
+    description: "AZ-NET-002: Detect inbound NSG rules allowing RDP from any source."
+    resource: azure.networksecuritygroup
+    filters:
+      - type: list-item
+        key: properties.securityRules[]
+        attrs:
+          - properties.access: Allow
+          - properties.direction: Inbound
+          - type: value
+            key: properties.sourceAddressPrefix
+            value: "*"
+          - type: value
+            key: properties.destinationPortRange
+            value: "3389"

@@ -1,0 +1,17 @@
+
+policies:
+  - name: az-kv-001-key-vault-public-network-access
+    description: "AZ-KV-001: Detect Key Vaults allowing public network access."
+    resource: azure.keyvault
+    filters:
+      - type: value
+        key: properties.publicNetworkAccess
+        value: Enabled
+
+  - name: az-kv-002-key-vault-purge-protection-disabled
+    description: "AZ-KV-002: Detect Key Vaults without purge protection."
+    resource: azure.keyvault
+    filters:
+      - type: value
+        key: properties.enablePurgeProtection
+        value: false

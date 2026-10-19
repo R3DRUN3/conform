@@ -1,0 +1,21 @@
+
+policies:
+  - name: aws-net-001-ssh-open-to-world
+    description: "AWS-NET-001: Detect security groups exposing SSH to the internet."
+    resource: aws.security-group
+    filters:
+      - type: ingress
+        Ports: [22]
+        Cidr:
+          - "0.0.0.0/0"
+          - "::/0"
+
+  - name: aws-net-002-rdp-open-to-world
+    description: "AWS-NET-002: Detect security groups exposing RDP to the internet."
+    resource: aws.security-group
+    filters:
+      - type: ingress
+        Ports: [3389]
+        Cidr:
+          - "0.0.0.0/0"
+          - "::/0"

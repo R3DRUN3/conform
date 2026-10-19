@@ -1,0 +1,12 @@
+
+policies:
+  - name: aws-sto-002-ebs-volume-unencrypted
+    description: "AWS-STO-002: Require encryption on Terraform EBS volumes."
+    resource: terraform.aws_ebs_volume
+    metadata:
+      severity: high
+      category: encryption
+    filters:
+      - or:
+          - encrypted: false
+          - encrypted: absent
