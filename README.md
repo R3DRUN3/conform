@@ -108,6 +108,10 @@ c7n-left run \
   --directory tests/aws-insecure
 ```  
 
+output example:  
+![aws-terraform](./media/aws-terraform.png)  
+
+
 
 azure test:   
 ```bash
@@ -115,6 +119,9 @@ c7n-left run \
   --policy-dir azure/terraform \
   --directory tests/azure-insecure
 ```  
+
+output example:  
+![azure-terraform](./media/azure-terraform.png)  
 
 
 
