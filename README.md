@@ -12,7 +12,7 @@
 
 ## Abstract  
 Conform is a cloud security policy collection built on [Cloud Custodian](https://github.com/cloud-custodian/cloud-custodian).  
-It provides a security baseline that helps cloud security teams implement and enforce their security policies and standards.  
+It is designed for **cloud security teams** to operationalize security policies, validate compliance, and enforce organizational standards across cloud environments.  
 Built on a policy-as-code approach, it turns security requirements into version-controlled, automated checks.  
 
 Conform combines two complementary approaches:  
@@ -23,14 +23,22 @@ Conform combines two complementary approaches:
 
 ## Use cases
 
-Conform is designed for **cloud security teams** to operationalize security policies, validate compliance, and enforce organizational standards across cloud environments.  
+Conform deliberately maintains an agnostic repository and policy structure to support integration across a broad range of use cases, including, but not limited to:  
 
 - **Compliance checks:** Assess cloud resources against internal security baselines and compliance requirements.
 - **Security standards enforcement:** Define consistent security rules and help teams maintain them across cloud providers.
 - **CSPM and auditing:** Identify misconfigurations in deployed infrastructure and support recurring security audits.
 - **Shift-left security:** Detect insecure Terraform configurations before deployment.
 - **CI/CD integration:** Automate security checks in development workflows to catch violations early.
-- **Remediation and continuous improvement:** Track policy violations, guide remediation, and verify that fixes meet security requirements.
+- **Remediation and continuous improvement:** Track policy violations, guide remediation, and verify that fixes meet security requirements.  
+
+For a simple example on how to integrate it into a CI pipeline, take a look at [this](https://github.com/r3drun3/aws-terraform-insecure) repository.  
+
+> [!TIP]
+> Conform policies are primarily designed to support organization-specific compliance checks, which can vary depending  
+> on the requirements security standards, and governance frameworks of each organization.  
+> For Infrastructure as Code (IaC) pipelines, it is recommended to complement Conform  
+> with additional configuration security scanning tools, such as [Trivy](https://trivy.dev/docs/latest/tutorials/misconfiguration/terraform/), to provide broader security coverage.  
 
 
 ## Usage  
