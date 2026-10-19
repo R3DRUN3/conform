@@ -1,0 +1,7 @@
+policies:
+  - name: az-sql-001-sql-auditing-disabled
+    description: "AZ-SQL-001: Detect SQL servers without auditing enabled."
+    resource: azure.sql-server
+    filters:
+      - type: auditing
+        enabled: false

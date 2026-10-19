@@ -1,0 +1,10 @@
+policies:
+  - name: aws-iam-001-console-users-without-mfa
+    description: "AWS-IAM-001: Detect IAM users with console access and no MFA."
+    resource: aws.iam-user
+    filters:
+      - type: credential
+        key: password_enabled
+        value: true
+      - type: mfa-device
+        value: false

@@ -1,0 +1,7 @@
+policies:
+  - name: aws-bak-001-ebs-volume-without-recent-snapshot
+    description: "AWS-BAK-001: Detect EBS volumes without a recent snapshot."
+    resource: aws.ebs
+    filters:
+      - type: fault-tolerant
+        tolerant: false
