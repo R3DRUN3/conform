@@ -1,5 +1,12 @@
 # Conform
 
+<img src="media/logo.png" alt="Conform logo" width="300">  
+
+![Cloud Security](https://img.shields.io/badge/Cloud-Security-0B1220?style=for-the-badge&logo=cloudflare&logoColor=white)
+![Policy as Code](https://img.shields.io/badge/Policy_as_Code-2563EB?style=for-the-badge&logo=githubactions&logoColor=white)   
+![Runtime Assessment](https://img.shields.io/badge/RealTime-Compliance-0891B2?style=for-the-badge&logo=shield&logoColor=white)
+![Shift Left Security](https://img.shields.io/badge/Shift--Left-16A34A?style=for-the-badge&logo=checkmarx&logoColor=white)
+
 **Check** and **Enforce** cloud security standards.  
 
 
