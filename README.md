@@ -76,6 +76,19 @@ To leave the virtual environment:
 deactivate
 ```  
 
+## Validate policies  
+
+Validate all policies:  
+```bash
+find aws azure -type f -name '*.yml' -print0 |
+xargs -0 -n1 custodian validate
+```  
+
+Validate single policy:  
+```bash
+custodian validate ./path/to/policy
+```   
+
 ## Run against cloud tenants
 
 aws example (set your preferred authentication method first):  
@@ -99,7 +112,7 @@ custodian run \
 
 
 
-## Run against terraform  
+## Run against terraform files  
 
 aws test:   
 ```bash
